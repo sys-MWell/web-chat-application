@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+:root{
+    --light-primary-background-colour:rgba(148, 148, 148, 0.21);
+    --light-navigation-blue: #7DBCEA;
+    --light-windowed-background-white: #FFFFFF;
+    --light-h1-black-colour: #000000;
+    --light-windowed-frame: rgba(246, 244, 244, 0.35);
+    --light-button: #FDFDFD;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.container{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1037px;
+    height: 664px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    background: rgba(148, 148, 148, 0.21);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.37);
+}
+
+.navigation-bar{
+    width: 112px;
+    max-width: 100%;
+    height: 664px;
+    background: #7DBCEA;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.register-window{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 925px;
+    height: 664px;
+    background: #FFFFFF;
+}
+
+.register-window h1{
+    width: 439px;
+    height: 29px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    color: #000000;
+}
+
+.register-frame{
+    width: 697px;
+    height: 557px;
+    background: rgba(246, 244, 244, 0.35);
+    border: 1px solid rgba(0, 0, 0, 0.19);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+/* --- signup form --- */
+.form{
+    padding: 25px 30px;
+}
+
+.form form{
+    margin: 20px 0;
+}
+
+.form form .error-txt{
+    color: #721c24;
+    background: #f8d7da;
+    font-size: 13px;
+    padding: 8px 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #721c24;
+    display: none; 
+}
+
+.form form .name-details{
+    display: flex;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.form form .name-details .field:first-child{
+    margin-right: 10px;
+}
+
+.form form .name-details .field:last-child{
+    margin-right: 10px;
+}
+
+.form form .field{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.form form .field label{
+    margin-bottom: 2px;
+    display: flex;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.form form .field input{
+    outline: none;
+}
+
+.form form .input input{
+    height: 35px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0 10px;
+    border: 3px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+}
+
+.form form .image input{
+    font-size: 17px;
+}
+
+.form form .button{
+    align-items: center;
+}
+
+.form form .button input{
+    position: absolute;
+    width: 307px;
+    height: 42px;
+    background: #FDFDFD;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    margin-bottom: 20px;
+    font-size: 17px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.form form .field i{
+    position: absolute;
+    right: 15px;
+    color: #ccc;
+    top: 70%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.form form .field i.active::before{
+    color: #333;
+    content: "\f070";
+}
+
+.form .link{
+    text-align: center;
+    margin: 10px 0;
+    font-size: 17px;
+}
+
+.form .link a{
+    color: #333;
+}
+
+.form .link a:hover{
+    text-decoration: underline;
+}
+/* --- --- */
+
+/* --- light/dark mode toggle --- */
+/* switch slider */
+.light-dark-toggle{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding-top: 10px;
+    bottom: 15px;
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 112px; /* Need a specific value to work */
+}
+
+.light-dark-toggle p{
+    padding: 10px 10px;
+    display: inline-block;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0, 0, 0);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: url("./images/moon-resize.png");
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #ffffff;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #b97e00;
+}
+
+input:checked + .slider:before {
+    content: url("./images/sun-resize.png");
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
+/* --- --- */
+
+/* On screens that are 992px wide or less, the background color is blue */
+@media screen and (max-width: 992px) {
+    body {
+      background-color: blue;
+    }
+    .navigation-bar{
+        width: 95px;
+    }
+    .container{
+        width: 837px;
+    }
+    .light-dark-toggle{
+        left: -17px;
+    }
+  }
+  
+  /* On screens that are 600px wide or less, the background color is olive */
+  @media screen and (max-width: 847px) {
+    body {
+      background-color: olive;
+    }
+    .navigation-bar{
+        width: 60px;
+    }
+    .container{
+        width: 500px;
+    }
+    .register-window{
+        width: 440px;
+    }
+    .register-frame{
+        width: 400px;
+    }
+  }
