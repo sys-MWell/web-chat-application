@@ -1,12 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 
 :root{
-    --light-primary-background-colour:rgba(148, 148, 148, 0.21);
-    --light-navigation-blue: #7DBCEA;
-    --light-windowed-background-white: #FFFFFF;
-    --light-h1-black-colour: #000000;
-    --light-windowed-frame: rgba(246, 244, 244, 0.35);
-    --light-button: #FDFDFD;
+    --background: #FFFFFF;
+    --primary-background-colour:rgba(148, 148, 148, 0.21);
+    --navigation: #7DBCEA;
+    --windowed-background: #FFFFFF;
+    --h1-black-colour: #000000;
+    --windowed-frame: rgba(246, 244, 244, 0.35);
+    --error-text: #721c24;
+    --error-text-border: #721c24;
+    --error-text-background: #f8d7da;
+    --input-box-background: #FFFFFF;
+    --label: #000;
+    --placeholder-text-colour: #000;
+    --button: #FDFDFD;
+}
+
+[data-theme="dark"] {
+    --background: white;
+    --primary-background-colour:rgba(148, 148, 148, 0.21);
+    --navigation: #949494;
+    --windowed-background: #D9D9D9;
+    --h1-black-colour: #000000;
+    --windowed-frame: #9D9898;
+    --error-text: #721c24;
+    --error-text-border: #721c24;
+    --error-text-background: #f8d7da;
+    --input-box-background: #4c4c4c;
+    --label: #000;
+    --placeholder-text-colour: #b2b2b2;
+    --button: #898787;
 }
 
 *{
@@ -18,7 +41,7 @@
 }
 
 body{
-    background-color: white;
+    background-color: var(--background);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +61,7 @@ body{
     overflow-x: hidden;
     overflow-y: hidden;
 
-    background: rgba(148, 148, 148, 0.21);
+    background: var(--primary-background-colour);
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.37);
 }
 
@@ -46,7 +69,7 @@ body{
     width: 112px;
     max-width: 100%;
     height: 664px;
-    background: #7DBCEA;
+    background: var(--navigation);
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -58,24 +81,24 @@ body{
     align-items: center;
     width: 925px;
     height: 664px;
-    background: #FFFFFF;
+    background: var(--windowed-background);
 }
 
 .register-window h1{
     width: 439px;
     height: 29px;
-    font-family: 'Inter';
+    font-family: 'Arial';
     font-style: normal;
     font-weight: 700;
     font-size: 36px;
     line-height: 44px;
-    color: #000000;
+    color: var(--h1-black-colour);
 }
 
 .register-frame{
     width: 697px;
     height: 557px;
-    background: rgba(246, 244, 244, 0.35);
+    background: var(--windowed-frame);
     border: 1px solid rgba(0, 0, 0, 0.19);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
@@ -91,14 +114,14 @@ body{
 }
 
 .form form .error-txt{
-    color: #721c24;
-    background: #f8d7da;
+    color: var(--error-text);
+    background: var(--error-text-background);
     font-size: 13px;
     padding: 8px 10px;
     text-align: center;
     border-radius: 5px;
     margin-bottom: 10px;
-    border: 1px solid #721c24;
+    border: 1px solid var(--error-text-border);
     display: none; 
 }
 
@@ -126,6 +149,7 @@ body{
 }
 
 .form form .field label{
+    color: var(label);
     margin-bottom: 2px;
     display: flex;
     font-style: normal;
@@ -143,9 +167,14 @@ body{
     width: 100%;
     font-size: 16px;
     padding: 0 10px;
+    background-color: var(--input-box-background);
     border: 3px solid #ccc;
     border: 1px solid rgba(0, 0, 0, 0.4);
     border-radius: 5px;
+}
+
+::placeholder{
+    color: var(--placeholder-text-colour);
 }
 
 .form form .image input{
@@ -160,7 +189,7 @@ body{
     position: absolute;
     width: 307px;
     height: 42px;
-    background: #FDFDFD;
+    background: var(--button);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 16px;
     margin-bottom: 20px;
@@ -183,17 +212,17 @@ body{
     content: "\f070";
 }
 
-.form .link{
+.register-frame .link{
     text-align: center;
     margin: 10px 0;
     font-size: 17px;
 }
 
-.form .link a{
+.register-frame .link a{
     color: #333;
 }
 
-.form .link a:hover{
+.register-frame .link a:hover{
     text-decoration: underline;
 }
 /* --- --- */
