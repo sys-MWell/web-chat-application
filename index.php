@@ -42,12 +42,12 @@
                             </div>
                             <div class="field input">
                                 <label>Password</label>
-                                <input type="password" name="password" placeholder="Enter password" required autocomplete="off">
+                                <input type="password" name="password" id="password" placeholder="Enter password" required autocomplete="off">
                                 <i class="fas fa-eye"></i>
                             </div>
                             <div class="field input">
                                 <label>Re-enter password</label>
-                                <input type="repassword" name="repassword" placeholder="Re-enter password" required autocomplete="off">
+                                <input type="password" name="repassword" id="repassword" placeholder="Re-enter password" required autocomplete="off">
                                 <i class="fas fa-eye"></i>
                             </div>
                             <div class="field image">
@@ -65,5 +65,6 @@
         </div>
     </div>
     <script src="./javascript/light-dark-mode.js"></script>
+    <script src="javascript/password-show-hide.js"></script>
 </body>
 </html>

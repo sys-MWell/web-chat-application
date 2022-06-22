@@ -14,10 +14,11 @@
     --label: #000;
     --placeholder-text-colour: #000;
     --button: #FDFDFD;
+    --link-color: #333;
 }
 
 [data-theme="dark"] {
-    --background: white;
+    --background: rgb(233, 233, 233);
     --primary-background-colour:rgba(148, 148, 148, 0.21);
     --navigation: #949494;
     --windowed-background: #D9D9D9;
@@ -30,6 +31,7 @@
     --label: #000;
     --placeholder-text-colour: #b2b2b2;
     --button: #898787;
+    --link-color: #ffffff;
 }
 
 *{
@@ -219,7 +221,7 @@ body{
 }
 
 .register-frame .link a{
-    color: #333;
+    color: var(--link-color);
 }
 
 .register-frame .link a:hover{
