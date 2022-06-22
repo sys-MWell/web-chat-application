@@ -315,9 +315,6 @@ border-radius: 50%;
 
 /* On screens that are 992px wide or less, the background color is blue */
 @media screen and (max-width: 992px) {
-    body {
-      background-color: blue;
-    }
     .navigation-bar{
         width: 95px;
     }
@@ -331,9 +328,6 @@ border-radius: 50%;
   
   /* On screens that are 600px wide or less, the background color is olive */
   @media screen and (max-width: 847px) {
-    body {
-      background-color: olive;
-    }
     .navigation-bar{
         width: 60px;
     }
@@ -346,4 +340,16 @@ border-radius: 50%;
     .register-frame{
         width: 400px;
     }
-  }
+    .light-dark-toggle{
+        transform: rotate(-90deg);
+        width: 86px;
+    }
+    .slider:before {
+        /* rotated image moon*/
+        content: url("./images/moon-resize-90deg.png")
+    }
+    input:checked + .slider:before {
+        /* rotated image sun */
+        content: url("./images/sun-resize-90deg.png");
+    }
+  } 
