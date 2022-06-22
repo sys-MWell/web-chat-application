@@ -66,5 +66,6 @@
     </div>
     <script src="./javascript/light-dark-mode.js"></script>
     <script src="javascript/password-show-hide.js"></script>
+    <script type="module" src="javascript/signup.js"></script>
 </body>
 </html>
