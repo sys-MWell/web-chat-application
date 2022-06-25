@@ -42,7 +42,7 @@
                             </div>
                             <div class="field input">
                                 <label>Date of birth</label>
-                                <input type="date" name="dob" required>
+                                <input type="date" name="dob" id="dob" required>
                             </div>
                             <div class="field password input">
                                 <label>Password</label>
