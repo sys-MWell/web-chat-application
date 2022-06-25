@@ -9,18 +9,12 @@ password =  document.getElementsByName('password'),
 reEnterPassword = document.getElementsByName('repassword'),
 errorText = form.querySelector(".error-txt");
 
+//preventing form from submitting
 form.onsubmit = (e)=>{
-    e.preventDefault(); //preventing form from submitting
+    e.preventDefault(); 
 }
 
-import userdetails from './classUserDetails.js';
 
-let details = new userdetails(null,
-  document.getElementsByName('fname'),
-  document.getElementsByName('lname'),
-  document.getElementsByName('email'),
-  document.getElementsByName('password'),
-null);
 
 // If signup button has been clicked
 continueBtn.onclick = ()=>{

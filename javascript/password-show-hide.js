@@ -1,18 +1,30 @@
-const passwordField = document.querySelector(".form input[type='password']"),
-password = document.getElementById("repassword"),
-toggleBtn = document.querySelector(".form .field i");
+const passwordField = document.querySelector(".form .password input[type='password']"),
+repasswordField = document.querySelector(".form .repassword input[type='password']"),
+toggleBtn1 = document.querySelector(".form .password i"),
+toggleBtn2 = document.querySelector(".form .repassword i");
 
-toggleBtn.onclick = ()=>{
+toggleBtn1.onclick = ()=>{
     if(passwordField.type == "password")
     {
-        password.type = "text"
         passwordField.type = "text";
-        toggleBtn.classList.add("active");
+        toggleBtn1.classList.add("active");
     }
     else
     {
-        password.type = "password"
         passwordField.type = "password";
-        toggleBtn.classList.remove("active");
+        toggleBtn1.classList.remove("active");
+    }
+}
+
+toggleBtn2.onclick = ()=>{
+    if(repasswordField.type == "password")
+    {
+        repasswordField.type = "text";
+        toggleBtn2.classList.add("active");
+    }
+    else
+    {
+        repasswordField.type = "password";
+        toggleBtn2.classList.remove("active");
     }
 }

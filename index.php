@@ -41,11 +41,15 @@
                                 <input type="text" name="email" placeholder="Enter email" required>
                             </div>
                             <div class="field input">
+                                <label>Date of birth</label>
+                                <input type="date" name="dob" required>
+                            </div>
+                            <div class="field password input">
                                 <label>Password</label>
                                 <input type="password" name="password" id="password" placeholder="Enter password" required autocomplete="off">
                                 <i class="fas fa-eye"></i>
                             </div>
-                            <div class="field input">
+                            <div class="field repassword input">
                                 <label>Re-enter password</label>
                                 <input type="password" name="repassword" id="repassword" placeholder="Re-enter password" required autocomplete="off">
                                 <i class="fas fa-eye"></i>
