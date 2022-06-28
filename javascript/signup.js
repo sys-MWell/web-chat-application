@@ -12,15 +12,23 @@ password =  document.getElementsByName('password'),
 reEnterPassword = document.getElementsByName('repassword'),
 errorText = form.querySelector(".error-txt");
 
-//preventing form from submitting
+var key = '79a247e48ac27ed33ca3f1919067fa64';
+
+// Preventing form from submitting
 form.onsubmit = (e)=>{
     e.preventDefault(); 
 }
 
 // If signup button has been clicked
 continueBtn.onclick = ()=>{
+
+  var message = 'amit';  
+  var encrypted = CryptoJS.AES.encrypt(message, key); 
+  alert("poop");
+  
+
   // Class declaration (https://bobbyhadz.com/blog/javascript-import-class-from-another-file)
-    const account = new AccountDetails(firstname, lastname, email, dob, password, reEnterPassword, null)
+    const account = new AccountDetails(firstname, lastname, email, dob, password, reEnterPassword)
 
     // start Ajex - client-side connectivity - retrieve data from a server asynchronously
     let xhr = new XMLHttpRequest(); // Creating XML object

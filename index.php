@@ -68,6 +68,7 @@
             </div>
         </div>
     </div>
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"></script>
     <script src="./javascript/light-dark-mode.js"></script>
     <script src="javascript/password-show-hide.js"></script>
     <script type="module" src="javascript/signup.js"></script>
