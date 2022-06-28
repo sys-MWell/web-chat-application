@@ -6,7 +6,6 @@ export class AccountDetails {
       this.dob = dob;
       this.password = password;
       this.repassword = repassword;
-      this.profile_img = profile_img;
     }
   
     // increaseSalary() {
