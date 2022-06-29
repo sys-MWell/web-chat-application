@@ -9,18 +9,20 @@ CREATE TABLE Users (
     CONSTRAINT PK_UD_UserId PRIMARY KEY (UserId)
 )
 
-CREATE TABLE UserDetails (
-    UserId
-)
-
 CREATE TABLE UserProfileImg (
     UserId INT NOT NULL,
     Img VARCHAR(255) NOT NULL
+    CONSTRAINT FK_UPI_UserId FOREIGN KEY (UserId) REFERENCES Users(UserId)
 )
 
 CREATE TABLE UserProfileStatus (
     UserId INT NOT NULL,
-    Status VARCHAR(10) NOT NULL
+    UserStatus VARCHAR(10) NOT NULL
+    CONSTRAINT FK_UPS_UserId FOREIGN KEY (UserId) REFERENCES Users(UserId)
+)
+
+CREATE TABLE UserDetails (
+    UserId
 )
 
 -- social media

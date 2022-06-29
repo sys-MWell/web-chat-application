@@ -35,8 +35,8 @@
                     $current_time = time(); // return current time, will be used to name image file
                     $new_img_name = $current_time.$img_name;
 
-                    if(move_uploaded_file($tmp_name, "images/".$new_img_name)){ // if successful upload, move file to new folder
-                        $status = "active"; // when user signup they are active)
+                    if(move_uploaded_file($tmp_name, "./users/profile_images/".$new_img_name)){ // if successful upload, move file to new folder
+                        $status = "Online"; // when user signup they are active)
                         $random_id = rand(time(), 10000000); // create random ID
                         
                         // Hash password
@@ -48,7 +48,7 @@
                         VALUES ({$random_id}, '{$fname}', '{$lname}', '{$email}', '{$hash}')
                         INSERT INTO userprofileimg (userid, img)
                         VALUES ({$random_id}, '{$new_img_name})'
-                        INSERT INTO userprofilestatus (userid, status)
+                        INSERT INTO userprofilestatus (userid, userstatus)
                         VALUES ({$random_id}, '{$status}')");
                         
                         if ($sql_create_user) // if data successfully inserted
