@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    // if user has previously logged in or not, if previous logged in - redirects to users page
+    if(isset($_SESSION['unique_ID'])){
+        header("location: users.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

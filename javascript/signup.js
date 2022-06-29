@@ -13,8 +13,8 @@ form.onsubmit = (e)=>{
 continueBtn.onclick = ()=>{
     // start Ajex - client-side connectivity - retrieve data from a server asynchronously
     let xhr = new XMLHttpRequest(); // Creating XML object
-    // Connect to psignup_config.php file (server)
-    xhr.open("POST", "php/signup_config.php", true);
+    // Connect to signup_config.php file (server)
+    xhr.open("POST", "./php/signup_config.php", true);
     xhr.onload = ()=>{
         if(xhr.readyState === XMLHttpRequest.DONE){
             if(xhr.status === 200){

@@ -7,11 +7,11 @@
     $dob = mysqli_real_escape_string($conn, $_POST['dob']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
-    $password = mysqli_real_escape_string($conn, $_POST['repassword']);
+    $repassword = mysqli_real_escape_string($conn, $_POST['repassword']);
 
 
     // check if class details are empty or not
-    if(!empty($fname) && !empty($lname) && !empty($email) && !empty($password)){
+    if(!empty($fname) && !empty($lname) && !empty($dob) && !empty($email) && !empty($password) && !empty($repassword)){
         // check requirements
         if(filter_var($email, FILTER_VALIDATE_EMAIL)){ // if email is valid
             // check if email already associated with an account
@@ -42,21 +42,21 @@
                         // Hash password
                         $hash = md5($password);
 
-                        $sql_create_user = mysqli_query($conn, 
-                        "BEGIN;
-                        INSERT INTO users (userid, firstname, lastname, dob, email, userpassword)
-                        VALUES ({$random_id}, '{$fname}', '{$lname}', '{$email}', '{$hash}')
-                        INSERT INTO userprofileimg (userid, img)
-                        VALUES ({$random_id}, '{$new_img_name})'
-                        INSERT INTO userprofilestatus (userid, userstatus)
-                        VALUES ({$random_id}, '{$status}')");
+                        $sql_user = mysqli_query($conn, "INSERT INTO users (userid, firstname, lastname, dob, email, userpassword)
+                                                        VALUES ({$random_id}, '{$fname}', '{$lname}', '{$dob}', '{$email}', '{$hash}')");
                         
-                        if ($sql_create_user) // if data successfully inserted
+                        $sql_user_profileimg = mysqli_query($conn, "INSERT INTO userprofileimg (userid, img)
+                                                            VALUES ({$random_id}, '{$new_img_name}')");
+
+                        $sql_user_status = mysqli_query($conn, "INSERT INTO userprofilestatus (userid, userstatus)
+                                                        VALUES ({$random_id}, '{$status}')");
+                        
+                        if ($sql_user && $sql_user_profileimg && $sql_user_status) // if data successfully inserted
                         {
                             $sql_select_existing_email = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}'");
                             if(mysqli_num_rows($sql_select_existing_email) > 0){
                                 $row = mysqli_fetch_assoc($sql_select_existing_email);
-                                $_SESSION['unique_ID'] = $row['unique_ID']; // unique_id is users session
+                                $_SESSION['UserId'] = $row['userid']; // unique_id is users session
                                 echo "success";
                             };
                         }
