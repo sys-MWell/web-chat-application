@@ -1,18 +1,9 @@
 // JS for signup page - index.php
-// Import class details
-import {AccountDetails} from "./classes/user-class";
 
 // Collects data from form entries - index.php
-const continueBtn = form.querySelector(".button input"),
-firstname = document.getElementsByName('fname'),
-lastname = document.getElementsByName('lname'),
-email = document.getElementsByName('email'),
-dob = document.getElementsByName('dob'),
-password =  document.getElementsByName('password'),
-reEnterPassword = document.getElementsByName('repassword'),
+const form = document.querySelector(".signup form"),
+continueBtn = form.querySelector(".button input"),
 errorText = form.querySelector(".error-txt");
-
-var key = '79a247e48ac27ed33ca3f1919067fa64';
 
 // Preventing form from submitting
 form.onsubmit = (e)=>{
@@ -21,15 +12,6 @@ form.onsubmit = (e)=>{
 
 // If signup button has been clicked
 continueBtn.onclick = ()=>{
-
-  var message = 'amit';  
-  var encrypted = CryptoJS.AES.encrypt(message, key); 
-  alert("poop");
-  
-
-  // Class declaration (https://bobbyhadz.com/blog/javascript-import-class-from-another-file)
-    const account = new AccountDetails(firstname, lastname, email, dob, password, reEnterPassword)
-
     // start Ajex - client-side connectivity - retrieve data from a server asynchronously
     let xhr = new XMLHttpRequest(); // Creating XML object
     // Connect to psignup_config.php file (server)

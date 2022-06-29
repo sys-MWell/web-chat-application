@@ -8,6 +8,7 @@
     <title>Registration page</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -37,12 +38,12 @@
                                 </div>
                             </div>
                             <div class="field input">
-                                <label>Email address</label>
-                                <input type="text" name="email" placeholder="Enter email" required>
-                            </div>
-                            <div class="field input">
                                 <label>Date of birth</label>
                                 <input type="date" name="dob" id="dob" required>
+                            </div>
+                            <div class="field input">
+                                <label>Email address</label>
+                                <input type="text" name="email" placeholder="Enter email" required>
                             </div>
                             <div class="field password input">
                                 <label>Password</label>
@@ -68,7 +69,6 @@
             </div>
         </div>
     </div>
-    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"></script>
     <script src="./javascript/light-dark-mode.js"></script>
     <script src="javascript/password-show-hide.js"></script>
     <script type="module" src="javascript/signup.js"></script>
