@@ -42,16 +42,21 @@
                         // Hash password
                         $hash = md5($password);
 
-
-                        $sql_insert = mysqli_query($conn, "INSERT INTO users (unique_ID, first_name, last_name, email, password, profile_img, status)
-                                                    VALUES ({$random_id}, '{$fname}', '{$lname}', '{$email}', '{$hash}', '{$new_img_name}', '{$status}')");
+                        $sql_create_user = mysqli_query($conn, 
+                        "BEGIN;
+                        INSERT INTO users (userid, firstname, lastname, dob, email, userpassword)
+                        VALUES ({$random_id}, '{$fname}', '{$lname}', '{$email}', '{$hash}')
+                        INSERT INTO userprofileimg (userid, img)
+                        VALUES ({$random_id}, '{$new_img_name})'
+                        INSERT INTO userprofilestatus (userid, status)
+                        VALUES ({$random_id}, '{$status}')");
                         
-                        if ($sql_insert) // if data successfully inserted
+                        if ($sql_create_user) // if data successfully inserted
                         {
                             $sql_select_existing_email = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}'");
                             if(mysqli_num_rows($sql_select_existing_email) > 0){
                                 $row = mysqli_fetch_assoc($sql_select_existing_email);
-                                $_SESSION['unique_ID'] = $row['unique_ID']; // unique_id is session
+                                $_SESSION['unique_ID'] = $row['unique_ID']; // unique_id is users session
                                 echo "success";
                             };
                         }

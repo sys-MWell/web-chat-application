@@ -24,7 +24,7 @@ continueBtn.onclick = ()=>{
               if(data == "success")
               {
                 // Redirect user to users.php
-                location.href = "users.php";
+                location.href = "chat.php";
               }
               else
               {
