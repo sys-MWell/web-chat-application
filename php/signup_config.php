@@ -32,38 +32,44 @@
 
                 $extensions_list = ['png', 'jpeg', 'jpg']; // img extensions
                 if(in_array($img_ext, $extensions_list) === true){ // if extension accepted
-                    $current_time = time(); // return current time, will be used to name image file
-                    $new_img_name = $current_time.$img_name;
 
-                    if(move_uploaded_file($tmp_name, "./users/profile_images/".$new_img_name)){ // if successful upload, move file to new folder
-                        $status = "Online"; // when user signup they are active)
+                    $status = "Online"; // when user signup they are active)
+                    $repeat = false;
+                    do{
                         $random_id = rand(time(), 10000000); // create random ID
-                        
-                        // Hash password
-                        $hash = md5($password);
-
-                        $sql_user = mysqli_query($conn, "INSERT INTO users (userid, firstname, lastname, dob, email, userpassword)
-                                                        VALUES ({$random_id}, '{$fname}', '{$lname}', '{$dob}', '{$email}', '{$hash}')");
-                        
-                        $sql_user_profileimg = mysqli_query($conn, "INSERT INTO userprofileimg (userid, img)
-                                                            VALUES ({$random_id}, '{$new_img_name}')");
-
-                        $sql_user_status = mysqli_query($conn, "INSERT INTO userprofilestatus (userid, userstatus)
-                                                        VALUES ({$random_id}, '{$status}')");
-                        
-                        if ($sql_user && $sql_user_profileimg && $sql_user_status) // if data successfully inserted
-                        {
-                            $sql_select_existing_email = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}'");
+                        $sql_select_existing_email = mysqli_query($conn, "SELECT * FROM users WHERE userid = '{$random_id}'");
                             if(mysqli_num_rows($sql_select_existing_email) > 0){
-                                $row = mysqli_fetch_assoc($sql_select_existing_email);
-                                $_SESSION['UserId'] = $row['userid']; // unique_id is users session
-                                echo "success";
+                                $repeat = true;
                             };
-                        }
-                        else
-                        {
-                            echo "Something went wrong!";
-                        }
+                    } while($repeat);
+                    
+                    // Hash password
+                    $hash = md5($password);
+
+                    $sql_user = mysqli_query($conn, "INSERT INTO users (userid, firstname, lastname, dob, email, userpassword)
+                                                    VALUES ({$random_id}, '{$fname}', '{$lname}', '{$dob}', '{$email}', '{$hash}')");
+
+                    $sql_user_status = mysqli_query($conn, "INSERT INTO userprofilestatus (userid, userstatus)
+                                                    VALUES ({$random_id}, '{$status}')");
+                    
+                    if ($sql_user && $sql_user_status) // if data successfully inserted
+                    {
+                        if(move_uploaded_file($tmp_name, "./users/profile_images/".$random_id)){ // if successful upload, move file to new folder
+                            $sql_user_profileimg = mysqli_query($conn, "INSERT INTO userprofileimg (userid, img)
+                            VALUES ({$random_id}, '{$random_id}')");
+                            if ($sql_user_profileimg){
+                                $sql_select_existing_email = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}'");
+                                if(mysqli_num_rows($sql_select_existing_email) > 0){
+                                    $rowdata = mysqli_fetch_assoc($sql_select_existing_email);
+                                    $_SESSION['userid'] = $rowdata['UserId']; // unique_id is users session
+                                    echo "success";
+                                };
+                            };
+                        };
+                    }
+                    else
+                    {
+                        echo "Something went wrong!";
                     }
                 }
                 else
