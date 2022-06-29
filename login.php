@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="true">
-    <title>Registration page</title>
+    <title>Login page</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 </head>
@@ -29,25 +29,11 @@
                 </div>
             </div>
             <div class="form-window">
-                <h1>Register account</h1>
+                <h1>Login to account</h1>
                 <div class="form-frame">
-                    <section class="form signup">
+                    <section class="form login">
                         <form action="#" enctype="multipart/form-data">
                             <div class="error-txt"></div>
-                            <div class="name-details">
-                                <div class="field input">
-                                    <label>First name</label>
-                                    <input type="text" name="fname" placeholder="Enter first name" required autocomplete="off">
-                                </div>
-                                <div class="field input">
-                                    <label>Last name</label>
-                                    <input type="text" name="lname" placeholder="Enter last name" required autocomplete="off">
-                                </div>
-                            </div>
-                            <div class="field input">
-                                <label>Date of birth</label>
-                                <input type="date" name="dob" id="dob" required>
-                            </div>
                             <div class="field input">
                                 <label>Email address</label>
                                 <input type="text" name="email" placeholder="Enter email" required>
@@ -57,27 +43,18 @@
                                 <input type="password" name="password" id="password" placeholder="Enter password" required autocomplete="off">
                                 <i class="fas fa-eye"></i>
                             </div>
-                            <div class="field repassword input">
-                                <label>Re-enter password</label>
-                                <input type="password" name="repassword" id="repassword" placeholder="Re-enter password" required autocomplete="off">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                            <div class="field image">
-                                <label>Profile image</label>
-                                <input type="file" name="image" required>
-                            </div>
                             <div class="field button">
                                 <input type="submit" value="Start chatting!">
                             </div>
                         </form>
                     </section>
-                    <div class="link">Have an account? <a href="login.php">Login now</a></A></div>
+                    <div class="link">Don't have an account? <a href="index.php">Register now</a></A></div>
                 </div>
             </div>
         </div>
     </div>
     <script src="./javascript/light-dark-mode.js"></script>
     <script src="javascript/password-show-hide.js"></script>
-    <script type="module" src="javascript/signup.js"></script>
+    <!-- <script type="module" src="javascript/signup.js"></script> -->
 </body>
 </html>

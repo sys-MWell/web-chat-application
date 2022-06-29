@@ -77,7 +77,7 @@ body{
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.register-window{
+.form-window{
     display: flex;
     flex-direction: column;
     row-gap: 20px;
@@ -88,7 +88,7 @@ body{
     background: var(--windowed-background);
 }
 
-.register-window h1{
+.form-window h1{
     width: 439px;
     height: 29px;
     font-family: 'Arial';
@@ -99,7 +99,10 @@ body{
     color: var(--h1-black-colour);
 }
 
-.register-frame{
+.form-frame{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 697px;
     height: 557px;
     background: var(--windowed-frame);
@@ -216,18 +219,22 @@ body{
     content: "\f070";
 }
 
-.register-frame .link{
+.form-frame .link{
     text-align: center;
     margin: 10px 0;
     font-size: 17px;
 }
 
-.register-frame .link a{
+.form-frame .link a{
     color: var(--link-color);
 }
 
-.register-frame .link a:hover{
+.form-frame .link a:hover{
     text-decoration: underline;
+}
+
+.form.login{
+    font-size: 100px;
 }
 /* --- --- */
 
@@ -336,10 +343,10 @@ border-radius: 50%;
     .container{
         width: 500px;
     }
-    .register-window{
+    .form-window{
         width: 440px;
     }
-    .register-frame{
+    .form-frame{
         width: 400px;
     }
     .light-dark-toggle{
