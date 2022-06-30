@@ -190,6 +190,7 @@ body{
 
 .form form .button{
     align-items: center;
+    padding-bottom: 6px;
 }
 
 .form form .button input{
@@ -233,8 +234,24 @@ body{
     text-decoration: underline;
 }
 
-.form.login{
-    font-size: 100px;
+/* Login form extras */
+.form-frame .form.login label{
+    font-size: 30px;
+}
+
+.form-frame .form.login .input input{
+    height: 50px;
+    width: 100%;
+    font-size: 20px;
+}
+
+.form-frame .form.login .field i{
+    font-size: 30px;
+}
+
+.form-frame .form.login .button{
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 /* --- --- */
 

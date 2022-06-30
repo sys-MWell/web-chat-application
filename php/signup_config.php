@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include_once "configuration.php";
+    include_once "config.php";
     // Retrieve data from signup form
     $fname = mysqli_real_escape_string($conn, $_POST['fname']);
     $lname = mysqli_real_escape_string($conn, $_POST['lname']);
