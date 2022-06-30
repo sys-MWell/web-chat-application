@@ -54,7 +54,7 @@
                     
                     if ($sql_user && $sql_user_status) // if data successfully inserted
                     {
-                        if(move_uploaded_file($tmp_name, "./users/profile_images/".$random_id)){ // if successful upload, move file to new folder
+                        if(move_uploaded_file($tmp_name, "./users/profile_images/".$random_id.$img_ext)){ // if successful upload, move file to new folder
                             $sql_user_profileimg = mysqli_query($conn, "INSERT INTO userprofileimg (userid, img)
                             VALUES ({$random_id}, '{$random_id}')");
                             if ($sql_user_profileimg){
