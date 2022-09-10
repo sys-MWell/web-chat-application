@@ -20,7 +20,7 @@ continueBtn.onclick = ()=>{
               let data = xhr.response;
               if(data == "success")
               {
-                location.href = "chat.php";
+                location.href = "conversations.php";
               }
               else
               {
