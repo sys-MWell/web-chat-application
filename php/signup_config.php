@@ -44,7 +44,8 @@
                     } while($repeat);
                     
                     // Hash password
-                    $hash = md5($password);
+                    //$hash = md5($password);
+                    $hash = $password;
 
                     $sql_user = mysqli_query($conn, "INSERT INTO users (userid, firstname, lastname, dob, email, userpassword)
                                                     VALUES ({$random_id}, '{$fname}', '{$lname}', '{$dob}', '{$email}', '{$hash}')");

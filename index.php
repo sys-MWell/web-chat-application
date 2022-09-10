@@ -44,7 +44,7 @@
                                     <input type="text" name="lname" placeholder="Enter last name" required autocomplete="off">
                                 </div>
                             </div>
-                            <div class="field input">
+                            <div class="field dob input">
                                 <label>Date of birth</label>
                                 <input type="date" name="dob" id="dob" required>
                             </div>

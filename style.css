@@ -12,6 +12,8 @@
     --error-text-border: #721c24;
     --error-text-background: #f8d7da;
     --input-box-background: #FFFFFF;
+    --choose-file-button-background: #FFFFFF;
+    --choose-file-button-text: #000;
     --label: #000;
     --placeholder-text-colour: #000;
     --button: #FDFDFD;
@@ -30,8 +32,10 @@
     --error-text-border: #721c24;
     --error-text-background: #f8d7da;
     --input-box-background: #888888;
+    --choose-file-button-background: #838383;
+    --choose-file-button-text: #ffffffe1;
     --label: #000;
-    --placeholder-text-colour: #373737;
+    --placeholder-text-colour: #ffffffe1;
     --button: #898787;
     --link-color: #ffffff;
 }
@@ -182,6 +186,17 @@ body{
 
 ::placeholder{
     color: var(--placeholder-text-colour);
+}
+
+input[type=date]:invalid::-webkit-datetime-edit{
+    color: var(--placeholder-text-colour);
+}
+
+input::file-selector-button {
+    background-color: var(--choose-file-button-background);
+    color: var(--choose-file-button-text);
+    border: thin solid rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
 }
 
 .form form .image input{

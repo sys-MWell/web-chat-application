@@ -10,7 +10,8 @@
     if(!empty($email) && !empty($password))
     {
         // Unhash password
-        $hash = md5($password);
+        //$hash = md5($password);
+        $hash = $password;
         
         // Check username and password in the database
         // Possibly add seperate check for both email and password, can then say is email is not found or password is incorrect etc
