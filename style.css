@@ -272,32 +272,32 @@ input::file-selector-button {
 
 /* ---------- Nav bar ---------- */
 /* Navigation bar + movements */
-.navigation
+.navigation-bar .navigation
 {
     transition: 0.5s;
     justify-content: center;
     align-items: center;
 }
 
-.navigation.open
+.navigation-bar .navigation.open
 {
     right: 32%;
     width: 200px;
 }
 
-.wrapper.open
+.navigation-bar .wrapper.open
 {
     width: 920px;
     transition: 0.5s;
 }
 
-.containment.open
+.navigation-bar .containment.open
 {
     left: 32%;
     transition: 0.5s;
 }
 
-.navigation .menuToggle.open
+.navigation-bar .navigation .menuToggle.open
 {
     transition: 0.5s;
     padding: 0 76px;
@@ -305,7 +305,7 @@ input::file-selector-button {
     width: 90%;
 }
 
-.navigation .menuToggle
+.navigation-bar .navigation .menuToggle
 {
     position: absolute;
     top: 0;
@@ -319,7 +319,7 @@ input::file-selector-button {
     padding: 0 23px;
 }
 
-.navigation .menuToggle::before
+.navigation-bar .navigation .menuToggle::before
 {
     content: '';
     position: absolute;
@@ -330,12 +330,12 @@ input::file-selector-button {
     transition: 0.5s;
 }
 
-.navigation.open .menuToggle::before
+.navigation-bar .navigation.open .menuToggle::before
 {
     transform: translateY(0px) rotate(45deg); 
 }
 
-.navigation .menuToggle::after
+.navigation-bar .navigation .menuToggle::after
 {
     content: '';
     position: absolute;
@@ -347,13 +347,13 @@ input::file-selector-button {
     box-shadow: 0 -8px 0 #333;
 }
 
-.navigation.open .menuToggle::after
+.navigation-bar .navigation.open .menuToggle::after
 {
     transform: translateY(0px) rotate(-45deg); 
     box-shadow: 0 0 0 #333;
 }
 
-.navigation ul
+.navigation-bar .navigation ul
 {
     display: flex;
     flex-direction: column;
@@ -361,7 +361,7 @@ input::file-selector-button {
     width: 100%
 }
 
-.navigation ul li
+.navigation-bar .navigation ul li
 {
     list-style: none;
     position: relative;
@@ -371,7 +371,7 @@ input::file-selector-button {
     transition: 0.5s;
 }
 
-.navigation ul li a
+.navigation-bar .navigation ul li a
 {
     position: relative;
     display: flex;
@@ -382,7 +382,7 @@ input::file-selector-button {
     text-decoration: none;
 }
 
-.navigation ul li a .icon
+.navigation-bar .navigation ul li a .icon
 {
     position: relative;
     display: block;
@@ -395,13 +395,13 @@ input::file-selector-button {
     color: #222;
 }
 
-.navigation ul li.active a .icon
+.navigation-bar .navigation ul li.active a .icon
 {
     color: #fff;
     background: var(--clr);
 }
 
-.navigation ul li a .icon::before
+.navigation-bar .navigation ul li a .icon::before
 {
     content: '';
     position: absolute;
@@ -415,12 +415,12 @@ input::file-selector-button {
     transition: 0.5s;
 }
 
-.navigation ul li.active a .icon::before
+.navigation-bar .navigation ul li.active a .icon::before
 {
     opacity: 1;
 }
 
-.navigation ul li a .text
+.navigation-bar .navigation ul li a .text
 {
     position: relative;
     padding: 0 15px;
@@ -433,13 +433,13 @@ input::file-selector-button {
     transition: 0.5s;
 }
 
-.navigation.open ul li a .text
+.navigation-bar .navigation.open ul li a .text
 {
     opacity: 1;
     visibility: visible;
 }
 
-.navigation ul li.active a .text
+.navigation-bar .navigation ul li.active a .text
 {
     color: var(--clr);
 }
