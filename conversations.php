@@ -21,6 +21,36 @@
     <div class="wrapper">
         <div class="container">
             <div class="navigation-bar">
+                <div class="navigation"> 
+                    <div class="menuToggle"></div>
+                    <ul>
+                        <li class="list" style="--clr:#ffa117;">
+                            <a href="javascript:delay('users.php')">
+                                <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                                <span class="text">Me</span>
+                            </a>
+                        </li>
+                        <li class="list active" style="--clr:#0fc70f;">
+                        <a href="javascript:delay('available_discussions.php')">
+                                <span class="icon"><ion-icon name="chatbubble-ellipses-outline"></ion-icon></span>
+                                <span class="text">Discussions</span>
+                            </a>
+                        </li>
+                        <li class="list" style="--clr:#2196f3;"> 
+                        <a href="javascript:delay('settings.php?user_ID=<?php echo $row_data['unique_ID'] ?>')">
+                                <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                                <span class="text">Settings</span>
+                            </a>
+                        </li>
+                        <li class="list" style="--clr:#b145e9;">
+                            <a href="javascript:delay('php/logout.php?logout_ID=<?php echo $row_data['unique_ID'] ?>')" class="logout">
+                                <span class="icon"><ion-icon name="exit-outline"></ion-icon></span>
+                                <span class="text">Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
                 <div class="light-dark-toggle">
                     <label class="switch">
                         <input type="checkbox" id="light-dark-toggle" checked>

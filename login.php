@@ -1,9 +1,9 @@
 <?php
-    // session_start();
-    // // if user has previously logged in or not, if previous logged in - redirects to users page
-    // if(isset($_SESSION['userid'])){
-    //     header("location: chat.php");
-    // }
+    session_start();
+    // if user has previously logged in or not, if previous logged in - redirects to users page
+    if(isset($_SESSION['userid'])){
+        header("location: chat.php");
+    }
 ?>
 
 <!DOCTYPE html>
