@@ -77,7 +77,7 @@
                 {
                     echo "Please enter a valid file extension - png, jpeg, jpg";
                 }
-            } 
+            }    
               else
               {
                 echo "Image file not uploaded";
